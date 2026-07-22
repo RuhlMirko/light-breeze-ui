@@ -1,0 +1,468 @@
+/* ============================================
+   LIGHT BREEZE UI - Frutiger Aero Styles
+   A minimal CSS template inspired by early 2000s UI
+   Copy this file into your project and use the classes
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+:root {
+  /* Primary Colors - Windows Vista Blue/Sky */
+  --lb-primary-50: #e6f2ff;
+  --lb-primary-100: #b3d9ff;
+  --lb-primary-200: #80bfff;
+  --lb-primary-300: #4da6ff;
+  --lb-primary-400: #1a8cff;
+  --lb-primary-500: #0073e6;
+  --lb-primary-600: #005bb4;
+  --lb-primary-700: #004482;
+  --lb-primary-800: #002d50;
+  --lb-primary-900: #00162e;
+
+  /* Accent Colors */
+  --lb-accent-cyan: #00d4ff;
+  --lb-accent-teal: #00b8a9;
+  --lb-accent-green: #00e676;
+  --lb-accent-orange: #ff9100;
+  --lb-accent-red: #ff5252;
+
+  /* Neutral Colors */
+  --lb-white: #ffffff;
+  --lb-gray-50: #f8fafc;
+  --lb-gray-100: #f1f5f9;
+  --lb-gray-200: #e2e8f0;
+  --lb-gray-300: #cbd5e1;
+  --lb-gray-400: #94a3b8;
+  --lb-gray-500: #64748b;
+  --lb-gray-600: #475569;
+  --lb-gray-700: #334155;
+  --lb-gray-800: #1e293b;
+  --lb-gray-900: #0f172a;
+
+  /* Gradients */
+  --lb-gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
+  --lb-gradient-aero: linear-gradient(180deg, #87ceeb 0%, #0073e6 100%);
+  --lb-gradient-shine: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 50%);
+
+  /* Shadows */
+  --lb-shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
+  --lb-shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --lb-shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --lb-shadow-glow: 0 0 20px rgba(0,115,230,0.3);
+
+  /* Borders */
+  --lb-border-radius: 12px;
+  --lb-border-radius-sm: 8px;
+  --lb-border-radius-lg: 16px;
+  --lb-border-radius-full: 9999px;
+
+  /* Typography */
+  --lb-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--lb-font-family);
+  line-height: 1.6;
+  color: var(--lb-gray-800);
+  background: linear-gradient(180deg, #e6f2ff 0%, #b3d9ff 100%);
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.lb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--lb-border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass shine overlay */
+.lb-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: var(--lb-gradient-shine);
+  pointer-events: none;
+  border-radius: var(--lb-border-radius) var(--lb-border-radius) 0 0;
+}
+
+/* Primary Button */
+.lb-button-primary {
+  background: var(--lb-gradient-aero);
+  color: var(--lb-white);
+  box-shadow: var(--lb-shadow-md), inset 0 1px 0 rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.lb-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--lb-shadow-lg), var(--lb-shadow-glow);
+}
+
+.lb-button-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--lb-shadow-sm);
+}
+
+/* Secondary Button */
+.lb-button-secondary {
+  background: var(--lb-gradient-glass);
+  color: var(--lb-gray-700);
+  box-shadow: var(--lb-shadow-sm);
+  border: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+}
+
+.lb-button-secondary:hover {
+  background: rgba(255,255,255,0.5);
+  transform: translateY(-1px);
+}
+
+/* Ghost Button */
+.lb-button-ghost {
+  background: transparent;
+  color: var(--lb-primary-600);
+  box-shadow: none;
+}
+
+.lb-button-ghost:hover {
+  background: rgba(0,115,230,0.1);
+}
+
+/* Button Sizes */
+.lb-button-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: var(--lb-border-radius-sm);
+}
+
+.lb-button-lg {
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  border-radius: var(--lb-border-radius-lg);
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+.lb-card {
+  background: var(--lb-gradient-glass);
+  backdrop-filter: blur(20px);
+  border-radius: var(--lb-border-radius-lg);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: var(--lb-shadow-lg);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass shine on top */
+.lb-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: var(--lb-gradient-shine);
+  pointer-events: none;
+  border-radius: var(--lb-border-radius-lg) var(--lb-border-radius-lg) 0 0;
+}
+
+.lb-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--lb-shadow-lg), var(--lb-shadow-glow);
+}
+
+.lb-card-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.lb-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--lb-gray-800);
+}
+
+.lb-card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.lb-card-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   FORM INPUTS
+   ============================================ */
+.lb-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--lb-gray-800);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: var(--lb-border-radius);
+  box-shadow: var(--lb-shadow-sm), inset 0 1px 2px rgba(0,0,0,0.05);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.lb-input::placeholder {
+  color: var(--lb-gray-400);
+}
+
+.lb-input:focus {
+  border-color: var(--lb-primary-400);
+  box-shadow: var(--lb-shadow-md), var(--lb-shadow-glow);
+  background: rgba(255,255,255,0.9);
+}
+
+.lb-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Textarea */
+.lb-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Select */
+.lb-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23475569' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+.lb-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--lb-border-radius-full);
+  background: var(--lb-gradient-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.lb-badge-primary {
+  background: var(--lb-gradient-aero);
+  color: var(--lb-white);
+  border-color: transparent;
+}
+
+.lb-badge-success {
+  background: linear-gradient(135deg, #00e676 0%, #00b8a9 100%);
+  color: var(--lb-white);
+  border-color: transparent;
+}
+
+.lb-badge-warning {
+  background: linear-gradient(135deg, #ff9100 0%, #ff6d00 100%);
+  color: var(--lb-white);
+  border-color: transparent;
+}
+
+.lb-badge-danger {
+  background: linear-gradient(135deg, #ff5252 0%, #ff1744 100%);
+  color: var(--lb-white);
+  border-color: transparent;
+}
+
+/* ============================================
+   ALERTS
+   ============================================ */
+.lb-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--lb-border-radius);
+  background: var(--lb-gradient-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: var(--lb-shadow-sm);
+}
+
+.lb-alert-info {
+  background: linear-gradient(135deg, rgba(0,212,255,0.2) 0%, rgba(0,115,230,0.2) 100%);
+  border-color: var(--lb-primary-300);
+}
+
+.lb-alert-success {
+  background: linear-gradient(135deg, rgba(0,230,118,0.2) 0%, rgba(0,184,169,0.2) 100%);
+  border-color: var(--lb-accent-green);
+}
+
+.lb-alert-warning {
+  background: linear-gradient(135deg, rgba(255,145,0,0.2) 0%, rgba(255,109,0,0.2) 100%);
+  border-color: var(--lb-accent-orange);
+}
+
+.lb-alert-danger {
+  background: linear-gradient(135deg, rgba(255,82,82,0.2) 0%, rgba(255,23,68,0.2) 100%);
+  border-color: var(--lb-accent-red);
+}
+
+.lb-alert-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.lb-alert-content {
+  font-size: 0.875rem;
+  color: var(--lb-gray-600);
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.lb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.lb-heading {
+  font-weight: 700;
+  color: var(--lb-gray-800);
+  line-height: 1.2;
+}
+
+.lb-heading-lg {
+  font-size: 2.5rem;
+}
+
+.lb-heading-md {
+  font-size: 1.75rem;
+}
+
+.lb-heading-sm {
+  font-size: 1.25rem;
+}
+
+.lb-text {
+  color: var(--lb-gray-600);
+  line-height: 1.7;
+}
+
+.lb-text-sm {
+  font-size: 0.875rem;
+}
+
+.lb-text-lg {
+  font-size: 1.125rem;
+}
+
+.lb-flex {
+  display: flex;
+}
+
+.lb-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.lb-items-center {
+  align-items: center;
+}
+
+.lb-justify-center {
+  justify-content: center;
+}
+
+.lb-gap-sm {
+  gap: 0.5rem;
+}
+
+.lb-gap-md {
+  gap: 1rem;
+}
+
+.lb-gap-lg {
+  gap: 1.5rem;
+}
+
+.lb-mb-sm {
+  margin-bottom: 0.5rem;
+}
+
+.lb-mb-md {
+  margin-bottom: 1rem;
+}
+
+.lb-mb-lg {
+  margin-bottom: 1.5rem;
+}
+
+.lb-mt-lg {
+  margin-top: 1.5rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .lb-container {
+    padding: 1rem;
+  }
+
+  .lb-heading-lg {
+    font-size: 1.75rem;
+  }
+
+  .lb-heading-md {
+    font-size: 1.25rem;
+  }
+}
