@@ -538,6 +538,123 @@ body {
 }
 
 /* ============================================
+   TOAST NOTIFICATIONS
+   ============================================ */
+.lb-toast-container {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 400px;
+  width: calc(100% - 3rem);
+}
+
+.lb-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--lb-border-radius);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: var(--lb-shadow-lg);
+  transform: translateX(120%);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.lb-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.lb-toast.hide {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+.lb-toast::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: var(--lb-gradient-shine);
+  pointer-events: none;
+}
+
+.lb-toast-info {
+  background: linear-gradient(135deg, rgba(0,212,255,0.85) 0%, rgba(0,115,230,0.85) 100%);
+  border-color: var(--lb-primary-300);
+  color: var(--lb-white);
+}
+
+.lb-toast-success {
+  background: linear-gradient(135deg, rgba(0,230,118,0.85) 0%, rgba(0,184,169,0.85) 100%);
+  border-color: var(--lb-accent-green);
+  color: var(--lb-white);
+}
+
+.lb-toast-warning {
+  background: linear-gradient(135deg, rgba(255,145,0,0.85) 0%, rgba(255,109,0,0.85) 100%);
+  border-color: var(--lb-accent-orange);
+  color: var(--lb-white);
+}
+
+.lb-toast-danger {
+  background: linear-gradient(135deg, rgba(255,82,82,0.85) 0%, rgba(255,23,68,0.85) 100%);
+  border-color: var(--lb-accent-red);
+  color: var(--lb-white);
+}
+
+.lb-toast-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.lb-toast-content {
+  flex: 1;
+}
+
+.lb-toast-title {
+  font-weight: 700;
+  margin-bottom: 0.125rem;
+}
+
+.lb-toast-message {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.lb-toast-close {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.25rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.lb-toast-close:hover {
+  opacity: 1;
+}
+
+/* Dark Theme Toast */
+[data-theme="dark"] .lb-toast {
+  border-color: var(--lb-border-light);
+}
+
+/* ============================================
    MODAL / POPUP
    ============================================ */
 .lb-modal-overlay {

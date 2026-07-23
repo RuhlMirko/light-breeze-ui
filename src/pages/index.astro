@@ -126,31 +126,15 @@ import '../styles/global.css';
         <h2 class="lb-card-title">Alerts</h2>
       </div>
       <div class="lb-card-body">
-        <div class="lb-flex lb-flex-col lb-gap-md" style="gap: 1rem; max-width: 600px; margin: 0 auto;">
-          <div class="lb-alert lb-alert-info">
-            <div>
-              <div class="lb-alert-title">Info</div>
-              <div class="lb-alert-content">This is an informational alert message.</div>
-            </div>
-          </div>
-          <div class="lb-alert lb-alert-success">
-            <div>
-              <div class="lb-alert-title">Success</div>
-              <div class="lb-alert-content">Your action was completed successfully!</div>
-            </div>
-          </div>
-          <div class="lb-alert lb-alert-warning">
-            <div>
-              <div class="lb-alert-title">Warning</div>
-              <div class="lb-alert-content">Please be aware of this important notice.</div>
-            </div>
-          </div>
-          <div class="lb-alert lb-alert-danger">
-            <div>
-              <div class="lb-alert-title">Error</div>
-              <div class="lb-alert-content">Something went wrong. Please try again.</div>
-            </div>
-          </div>
+        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md lb-mb-lg">
+          <button class="lb-button lb-button-secondary" data-show-alert="info">Show Info</button>
+          <button class="lb-button lb-button-secondary" data-show-alert="success">Show Success</button>
+          <button class="lb-button lb-button-secondary" data-show-alert="warning">Show Warning</button>
+          <button class="lb-button lb-button-secondary" data-show-alert="danger">Show Danger</button>
+        </div>
+        <div id="toast-container" class="lb-toast-container"></div>
+        <div class="lb-mt-lg" style="background: var(--lb-gray-100); padding: 1rem; border-radius: var(--lb-border-radius-sm);">
+          <code class="lb-text-sm">&lt;div class="lb-alert lb-alert-info"&gt;...&lt;/div&gt;</code>
         </div>
       </div>
     </section>
@@ -274,6 +258,56 @@ import '../styles/global.css';
         text.textContent = 'Light';
       }
     }
+
+    // Toast alerts
+    const alerts = {
+      info: { icon: 'ℹ️', title: 'Info', message: 'This is an informational alert message.' },
+      success: { icon: '✅', title: 'Success', message: 'Your action was completed successfully!' },
+      warning: { icon: '⚠️', title: 'Warning', message: 'Please be aware of this important notice.' },
+      danger: { icon: '❌', title: 'Error', message: 'Something went wrong. Please try again.' }
+    };
+
+    function showToast(type) {
+      const data = alerts[type];
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `lb-toast lb-toast-${type}`;
+      toast.innerHTML = `
+        <span class="lb-toast-icon">${data.icon}</span>
+        <div class="lb-toast-content">
+          <div class="lb-toast-title">${data.title}</div>
+          <div class="lb-toast-message">${data.message}</div>
+        </div>
+        <button class="lb-toast-close">&times;</button>
+      `;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          toast.classList.add('show');
+        });
+      });
+
+      toast.querySelector('.lb-toast-close').addEventListener('click', () => {
+        toast.classList.remove('show');
+        toast.classList.add('hide');
+        setTimeout(() => toast.remove(), 400);
+      });
+
+      setTimeout(() => {
+        if (toast.parentNode) {
+          toast.classList.remove('show');
+          toast.classList.add('hide');
+          setTimeout(() => toast.remove(), 400);
+        }
+      }, 4000);
+    }
+
+    document.querySelectorAll('[data-show-alert]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showToast(btn.getAttribute('data-show-alert'));
+      });
+    });
 
     // Modal logic
     document.getElementById('open-modal-1').addEventListener('click', () => {
