@@ -13,6 +13,12 @@ import '../styles/global.css';
   <div class="lb-container">
     <!-- Header -->
     <header style="text-align: center; margin-bottom: 3rem; padding: 2rem 0;">
+      <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+        <button id="theme-toggle" class="lb-button lb-button-secondary lb-button-sm">
+          <span id="theme-icon">☀️</span>
+          <span id="theme-text">Light</span>
+        </button>
+      </div>
       <h1 class="lb-heading lb-heading-lg lb-mb-sm">Light Breeze UI</h1>
       <p class="lb-text lb-text-lg">A minimal CSS template inspired by early 2000s Frutiger Aero aesthetics</p>
       <p class="lb-text lb-text-sm lb-mt-lg" style="color: var(--lb-gray-500);">Copy the CSS file into your project and use the classes</p>
@@ -178,5 +184,34 @@ import '../styles/global.css';
       <p>Light Breeze UI - Frutiger Aero CSS Template</p>
     </footer>
   </div>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-icon');
+    const text = document.getElementById('theme-text');
+    
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateButton(savedTheme);
+    
+    toggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateButton(next);
+    });
+    
+    function updateButton(theme) {
+      if (theme === 'dark') {
+        icon.textContent = '🌙';
+        text.textContent = 'Dark';
+      } else {
+        icon.textContent = '☀️';
+        text.textContent = 'Light';
+      }
+    }
+  </script>
 </body>
 </html>
