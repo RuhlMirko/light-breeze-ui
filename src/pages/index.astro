@@ -30,12 +30,12 @@ import '../styles/global.css';
         <h2 class="lb-card-title">Buttons</h2>
       </div>
       <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-items-center lb-gap-md">
+        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md">
           <button class="lb-button lb-button-primary">Primary</button>
           <button class="lb-button lb-button-secondary">Secondary</button>
           <button class="lb-button lb-button-ghost">Ghost</button>
         </div>
-        <div class="lb-flex lb-flex-wrap lb-items-center lb-gap-md lb-mt-lg">
+        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md lb-mt-lg">
           <button class="lb-button lb-button-primary lb-button-sm">Small</button>
           <button class="lb-button lb-button-primary">Default</button>
           <button class="lb-button lb-button-primary lb-button-lg">Large</button>
@@ -52,8 +52,8 @@ import '../styles/global.css';
         <h2 class="lb-card-title">Cards</h2>
       </div>
       <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-gap-lg">
-          <div class="lb-card" style="flex: 1; min-width: 250px;">
+        <div class="lb-flex lb-flex-wrap lb-justify-center lb-gap-lg">
+          <div class="lb-card" style="flex: 1; min-width: 250px; max-width: 350px;">
             <div class="lb-card-header">
               <h3 class="lb-card-title lb-heading-sm">Card Title</h3>
             </div>
@@ -61,7 +61,7 @@ import '../styles/global.css';
               <p class="lb-text">This is a glass-effect card with backdrop blur and gradient overlays.</p>
             </div>
           </div>
-          <div class="lb-card" style="flex: 1; min-width: 250px;">
+          <div class="lb-card" style="flex: 1; min-width: 250px; max-width: 350px;">
             <div class="lb-card-header">
               <h3 class="lb-card-title lb-heading-sm">Another Card</h3>
             </div>
@@ -79,16 +79,16 @@ import '../styles/global.css';
         <h2 class="lb-card-title">Form Inputs</h2>
       </div>
       <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-gap-lg">
-          <div style="flex: 1; min-width: 200px;">
+        <div class="lb-flex lb-flex-wrap lb-justify-center lb-gap-lg">
+          <div style="flex: 1; min-width: 200px; max-width: 300px;">
             <label class="lb-text-sm lb-mb-sm" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Text Input</label>
             <input type="text" class="lb-input" placeholder="Enter text...">
           </div>
-          <div style="flex: 1; min-width: 200px;">
+          <div style="flex: 1; min-width: 200px; max-width: 300px;">
             <label class="lb-text-sm lb-mb-sm" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email Input</label>
             <input type="email" class="lb-input" placeholder="email@example.com">
           </div>
-          <div style="flex: 1; min-width: 200px;">
+          <div style="flex: 1; min-width: 200px; max-width: 300px;">
             <label class="lb-text-sm lb-mb-sm" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Select</label>
             <select class="lb-input lb-select">
               <option>Option 1</option>
@@ -97,7 +97,7 @@ import '../styles/global.css';
             </select>
           </div>
         </div>
-        <div class="lb-mt-lg">
+        <div class="lb-mt-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">
           <label class="lb-text-sm lb-mb-sm" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Textarea</label>
           <textarea class="lb-input lb-textarea" placeholder="Enter your message..."></textarea>
         </div>
@@ -110,7 +110,7 @@ import '../styles/global.css';
         <h2 class="lb-card-title">Badges</h2>
       </div>
       <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-items-center lb-gap-md">
+        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md">
           <span class="lb-badge">Default</span>
           <span class="lb-badge lb-badge-primary">Primary</span>
           <span class="lb-badge lb-badge-success">Success</span>
@@ -126,7 +126,7 @@ import '../styles/global.css';
         <h2 class="lb-card-title">Alerts</h2>
       </div>
       <div class="lb-card-body">
-        <div class="lb-flex lb-flex-col lb-gap-md" style="gap: 1rem;">
+        <div class="lb-flex lb-flex-col lb-gap-md" style="gap: 1rem; max-width: 600px; margin: 0 auto;">
           <div class="lb-alert lb-alert-info">
             <div>
               <div class="lb-alert-title">Info</div>
@@ -155,6 +155,22 @@ import '../styles/global.css';
       </div>
     </section>
 
+    <!-- Modal Section -->
+    <section class="lb-card lb-mb-lg">
+      <div class="lb-card-header">
+        <h2 class="lb-card-title">Modal / Popup</h2>
+      </div>
+      <div class="lb-card-body">
+        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md">
+          <button class="lb-button lb-button-primary" id="open-modal-1">Open Modal</button>
+          <button class="lb-button lb-button-secondary" id="open-modal-2">Confirm Dialog</button>
+        </div>
+        <div class="lb-mt-lg" style="background: var(--lb-gray-100); padding: 1rem; border-radius: var(--lb-border-radius-sm);">
+          <code class="lb-text-sm">&lt;div class="lb-modal-overlay" id="modal"&gt;...&lt;/div&gt;</code>
+        </div>
+      </div>
+    </section>
+
     <!-- Usage Section -->
     <section class="lb-card">
       <div class="lb-card-header">
@@ -174,6 +190,19 @@ import '../styles/global.css';
   &lt;div class="lb-card-body"&gt;
     Content here
   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="lb-modal-overlay" id="modal"&gt;
+  &lt;div class="lb-modal"&gt;
+    &lt;div class="lb-modal-header"&gt;
+      &lt;span class="lb-modal-title"&gt;Title&lt;/span&gt;
+      &lt;button class="lb-modal-close"&gt;&times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="lb-modal-body"&gt;Content&lt;/div&gt;
+    &lt;div class="lb-modal-footer"&gt;
+      &lt;button class="lb-button lb-button-primary"&gt;OK&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</pre>
         </div>
       </div>
@@ -185,12 +214,45 @@ import '../styles/global.css';
     </footer>
   </div>
 
+  <!-- Modal 1: Info Modal -->
+  <div class="lb-modal-overlay" id="modal-1">
+    <div class="lb-modal">
+      <div class="lb-modal-header">
+        <span class="lb-modal-title">Welcome Back</span>
+        <button class="lb-modal-close" data-close="modal-1">&times;</button>
+      </div>
+      <div class="lb-modal-body">
+        <p class="lb-text">This is a glass-effect modal with backdrop blur. It follows the Frutiger Aero design language with translucent surfaces and soft gradients.</p>
+      </div>
+      <div class="lb-modal-footer">
+        <button class="lb-button lb-button-secondary" data-close="modal-1">Cancel</button>
+        <button class="lb-button lb-button-primary" data-close="modal-1">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Confirm Dialog -->
+  <div class="lb-modal-overlay" id="modal-2">
+    <div class="lb-modal" style="max-width: 380px;">
+      <div class="lb-modal-header">
+        <span class="lb-modal-title">Confirm Action</span>
+        <button class="lb-modal-close" data-close="modal-2">&times;</button>
+      </div>
+      <div class="lb-modal-body">
+        <p class="lb-text">Are you sure you want to proceed? This action cannot be undone.</p>
+      </div>
+      <div class="lb-modal-footer">
+        <button class="lb-button lb-button-secondary" data-close="modal-2">No, cancel</button>
+        <button class="lb-button lb-button-primary" style="background: linear-gradient(180deg, #ff7043 0%, #e53935 100%);" data-close="modal-2">Yes, delete</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     const toggle = document.getElementById('theme-toggle');
     const icon = document.getElementById('theme-icon');
     const text = document.getElementById('theme-text');
     
-    // Check for saved theme preference or default to light
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateButton(savedTheme);
@@ -212,6 +274,36 @@ import '../styles/global.css';
         text.textContent = 'Light';
       }
     }
+
+    // Modal logic
+    document.getElementById('open-modal-1').addEventListener('click', () => {
+      document.getElementById('modal-1').classList.add('active');
+    });
+
+    document.getElementById('open-modal-2').addEventListener('click', () => {
+      document.getElementById('modal-2').classList.add('active');
+    });
+
+    document.querySelectorAll('[data-close]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-close');
+        document.getElementById(id).classList.remove('active');
+      });
+    });
+
+    document.querySelectorAll('.lb-modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('active');
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.lb-modal-overlay.active').forEach(m => m.classList.remove('active'));
+      }
+    });
   </script>
 </body>
 </html>

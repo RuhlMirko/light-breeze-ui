@@ -538,6 +538,127 @@ body {
 }
 
 /* ============================================
+   MODAL / POPUP
+   ============================================ */
+.lb-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.lb-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lb-modal {
+  background: var(--lb-gradient-glass);
+  backdrop-filter: blur(20px);
+  border-radius: var(--lb-border-radius-lg);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: var(--lb-shadow-lg), 0 0 40px rgba(0,115,230,0.2);
+  padding: 0;
+  max-width: 480px;
+  width: 90%;
+  max-height: 85vh;
+  overflow: hidden;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.lb-modal-overlay.active .lb-modal {
+  transform: scale(1) translateY(0);
+}
+
+.lb-modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: var(--lb-gradient-shine);
+  pointer-events: none;
+  border-radius: var(--lb-border-radius-lg) var(--lb-border-radius-lg) 0 0;
+}
+
+.lb-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.lb-modal-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--lb-text-primary);
+}
+
+.lb-modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--lb-border-radius-sm);
+  cursor: pointer;
+  color: var(--lb-text-secondary);
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.lb-modal-close:hover {
+  background: rgba(255,255,255,0.2);
+  color: var(--lb-text-primary);
+}
+
+.lb-modal-body {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.lb-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark Theme Modal */
+[data-theme="dark"] .lb-modal {
+  border-color: var(--lb-border-light);
+}
+
+[data-theme="dark"] .lb-modal::before {
+  background: var(--lb-gradient-shine);
+}
+
+[data-theme="dark"] .lb-modal-header,
+[data-theme="dark"] .lb-modal-footer {
+  border-color: var(--lb-border-light);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
