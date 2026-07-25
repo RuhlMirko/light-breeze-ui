@@ -241,7 +241,7 @@ import '../styles/global.css';
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateButton(savedTheme);
     
-    toggle.addEventListener('click', () => {
+    toggle?.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
@@ -249,27 +249,28 @@ import '../styles/global.css';
       updateButton(next);
     });
     
-    function updateButton(theme) {
+    function updateButton(theme: string) {
       if (theme === 'dark') {
-        icon.textContent = '🌙';
-        text.textContent = 'Dark';
+        icon?.textContent ? (icon.textContent = '🌙') : null;
+        text?.textContent ? (text.textContent = 'Dark') : null;
       } else {
-        icon.textContent = '☀️';
-        text.textContent = 'Light';
+        icon?.textContent ? (icon.textContent = '☀️') : null;
+        text?.textContent ? (text.textContent = 'Light') : null;
       }
     }
 
     // Toast alerts
-    const alerts = {
+    const alerts: Record<string, { icon: string; title: string; message: string }> = {
       info: { icon: 'ℹ️', title: 'Info', message: 'This is an informational alert message.' },
       success: { icon: '✅', title: 'Success', message: 'Your action was completed successfully!' },
       warning: { icon: '⚠️', title: 'Warning', message: 'Please be aware of this important notice.' },
       danger: { icon: '❌', title: 'Error', message: 'Something went wrong. Please try again.' }
     };
 
-    function showToast(type) {
+    function showToast(type: string) {
       const data = alerts[type];
       const container = document.getElementById('toast-container');
+      if (!container) return;
       const toast = document.createElement('div');
       toast.className = `lb-toast lb-toast-${type}`;
       toast.innerHTML = `
@@ -288,11 +289,14 @@ import '../styles/global.css';
         });
       });
 
-      toast.querySelector('.lb-toast-close').addEventListener('click', () => {
-        toast.classList.remove('show');
-        toast.classList.add('hide');
-        setTimeout(() => toast.remove(), 400);
-      });
+      const closeBtn = toast.querySelector('.lb-toast-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          toast.classList.remove('show');
+          toast.classList.add('hide');
+          setTimeout(() => toast.remove(), 400);
+        });
+      }
 
       setTimeout(() => {
         if (toast.parentNode) {
@@ -340,4 +344,9 @@ import '../styles/global.css';
     });
   </script>
 </body>
+<style>
+  section{
+    min-height: 300px;
+  }
+</style>
 </html>
