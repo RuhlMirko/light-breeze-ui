@@ -1,169 +1,265 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Light Breeze UI - Frutiger Aero CSS Template</title>
-</head>
-<body>
-  <div class="lb-container">
-    <!-- Header -->
-    <header style="text-align: center; margin-bottom: 3rem; padding: 2rem 0;">
-      <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
-        <button id="theme-toggle" class="lb-button lb-button-secondary lb-button-sm">
-          <span id="theme-icon">☀️</span>
-          <span id="theme-text">Light</span>
-        </button>
-      </div>
-      <h1 class="lb-heading lb-heading-lg lb-mb-sm">Light Breeze UI</h1>
-      <p class="lb-text lb-text-lg">A minimal CSS template inspired by early 2000s Frutiger Aero aesthetics</p>
-      <p class="lb-text lb-text-sm lb-mt-lg" style="color: var(--lb-gray-500);">Copy the CSS file into your project and use the classes</p>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light Breeze UI - Frutiger Aero CSS Template</title>
+  </head>
+  <body>
+    <div class="lb-container">
+      <!-- Header -->
+      <header style="text-align: center; margin-bottom: 3rem; padding: 2rem 0;">
+        <div
+          style="display: flex; justify-content: flex-end; margin-bottom: 1rem;"
+        >
+          <button id="theme-toggle" class="lb-button lb-button-sm">
+            <span id="theme-icon">☀️</span>
+            <span id="theme-text">Light</span>
+          </button>
+        </div>
+        <h1 class="lb-heading lb-heading-lg lb-mb-sm">Light Breeze UI</h1>
+        <p class="lb-text lb-text-lg">
+          A minimal CSS template inspired by early 2000s Frutiger Aero
+          aesthetics
+        </p>
+        <p
+          class="lb-text lb-text-sm lb-mt-lg"
+          style="color: var(--lb-gray-500);"
+        >
+          Copy the CSS file into your project and use the classes
+        </p>
+      </header>
 
-    <!-- Buttons Section -->
-    <section class="lb-card lb-mb-lg">
-      <div class="lb-card-header">
-        <h2 class="lb-card-title">Buttons</h2>
-      </div>
-      <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md">
-          <button class="lb-button lb-button-primary">Primary</button>
-          <button class="lb-button lb-button-secondary">Secondary</button>
-          <button class="lb-button lb-button-ghost">Ghost</button>
+      <!-- Buttons Section -->
+      <section class="lb-card lb-mb-lg">
+        <div class="lb-card-header">
+          <h2 class="lb-card-title">Buttons</h2>
         </div>
-        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md lb-mt-lg">
-          <button class="lb-button lb-button-primary lb-button-sm">Small</button>
-          <button class="lb-button lb-button-primary">Default</button>
-          <button class="lb-button lb-button-primary lb-button-lg">Large</button>
+        <div class="lb-card-body">
+          <div
+            class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md"
+          >
+            <button class="lb-button lb-button-primary">Primary</button>
+            <button class="lb-button lb-button-secondary">Secondary</button>
+            <button class="lb-button lb-button-ghost">Ghost</button>
+          </div>
+          <div
+            class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md lb-mt-lg"
+          >
+            <button class="lb-button lb-button-primary lb-button-sm"
+              >Small</button
+            >
+            <button class="lb-button lb-button-primary">Default</button>
+            <button class="lb-button lb-button-primary lb-button-lg"
+              >Large</button
+            >
+          </div>
+          <div
+            class="lb-mt-lg"
+            style="background: var(--lb-gray-100); padding: 1rem; border-radius: var(--lb-border-radius-sm);"
+          >
+            <code class="lb-text-sm"
+              >&lt;button class="lb-button
+              lb-button-primary"&gt;Primary&lt;/button&gt;</code
+            >
+          </div>
         </div>
-        <div class="lb-mt-lg" style="background: var(--lb-gray-100); padding: 1rem; border-radius: var(--lb-border-radius-sm);">
-          <code class="lb-text-sm">&lt;button class="lb-button lb-button-primary"&gt;Primary&lt;/button&gt;</code>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Cards Section -->
-    <section class="lb-card lb-mb-lg">
-      <div class="lb-card-header">
-        <h2 class="lb-card-title">Cards</h2>
-      </div>
-      <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-justify-center lb-gap-lg">
-          <div class="lb-card" style="flex: 1; min-width: 250px; max-width: 350px;">
-            <div class="lb-card-header">
-              <h3 class="lb-card-title lb-heading-sm">Card Title</h3>
+      <!-- Cards Section -->
+      <section class="lb-card lb-mb-lg">
+        <div class="lb-card-header">
+          <h2 class="lb-card-title">Cards</h2>
+        </div>
+        <div class="lb-card-body">
+          <div class="lb-flex lb-flex-wrap lb-justify-center lb-gap-lg">
+            <div
+              class="lb-card"
+              style="flex: 1; min-width: 250px; max-width: 350px;"
+            >
+              <div class="lb-card-header">
+                <h3 class="lb-card-title lb-heading-sm">Card Title</h3>
+              </div>
+              <div class="lb-card-body">
+                <p class="lb-text">
+                  This is a glass-effect card with backdrop blur and gradient
+                  overlays.
+                </p>
+              </div>
             </div>
-            <div class="lb-card-body">
-              <p class="lb-text">This is a glass-effect card with backdrop blur and gradient overlays.</p>
+            <div
+              class="lb-card"
+              style="flex: 1; min-width: 250px; max-width: 350px;"
+            >
+              <div class="lb-card-header">
+                <h3 class="lb-card-title lb-heading-sm">Another Card</h3>
+              </div>
+              <div class="lb-card-body">
+                <p class="lb-text">
+                  Cards have a frosted glass appearance typical of the Aero
+                  design language.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="lb-card" style="flex: 1; min-width: 250px; max-width: 350px;">
-            <div class="lb-card-header">
-              <h3 class="lb-card-title lb-heading-sm">Another Card</h3>
+        </div>
+      </section>
+
+      <!-- Form Inputs Section -->
+      <section class="lb-card lb-mb-lg">
+        <div class="lb-card-header">
+          <h2 class="lb-card-title">Form Inputs</h2>
+        </div>
+        <div class="lb-card-body">
+          <div class="lb-flex lb-flex-wrap lb-justify-center lb-gap-lg">
+            <div style="flex: 1; min-width: 200px; max-width: 300px;">
+              <label
+                class="lb-text-sm lb-mb-sm"
+                style="display: block; font-weight: 600; margin-bottom: 0.5rem;"
+                >Text Input</label
+              >
+              <input type="text" class="lb-input" placeholder="Enter text..." />
             </div>
-            <div class="lb-card-body">
-              <p class="lb-text">Cards have a frosted glass appearance typical of the Aero design language.</p>
+            <div style="flex: 1; min-width: 200px; max-width: 300px;">
+              <label
+                class="lb-text-sm lb-mb-sm"
+                style="display: block; font-weight: 600; margin-bottom: 0.5rem;"
+                >Email Input</label
+              >
+              <input
+                type="email"
+                class="lb-input"
+                placeholder="email@example.com"
+              />
+            </div>
+            <div style="flex: 1; min-width: 200px; max-width: 300px;">
+              <label
+                class="lb-text-sm lb-mb-sm"
+                style="display: block; font-weight: 600; margin-bottom: 0.5rem;"
+                >Select</label
+              >
+              <select class="lb-input lb-select">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Form Inputs Section -->
-    <section class="lb-card lb-mb-lg">
-      <div class="lb-card-header">
-        <h2 class="lb-card-title">Form Inputs</h2>
-      </div>
-      <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-justify-center lb-gap-lg">
-          <div style="flex: 1; min-width: 200px; max-width: 300px;">
-            <label class="lb-text-sm lb-mb-sm" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Text Input</label>
-            <input type="text" class="lb-input" placeholder="Enter text...">
-          </div>
-          <div style="flex: 1; min-width: 200px; max-width: 300px;">
-            <label class="lb-text-sm lb-mb-sm" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email Input</label>
-            <input type="email" class="lb-input" placeholder="email@example.com">
-          </div>
-          <div style="flex: 1; min-width: 200px; max-width: 300px;">
-            <label class="lb-text-sm lb-mb-sm" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Select</label>
-            <select class="lb-input lb-select">
-              <option>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </select>
+          <div
+            class="lb-mt-lg"
+            style="max-width: 600px; margin-left: auto; margin-right: auto;"
+          >
+            <label
+              class="lb-text-sm lb-mb-sm"
+              style="display: block; font-weight: 600; margin-bottom: 0.5rem;"
+              >Textarea</label
+            >
+            <textarea
+              class="lb-input lb-textarea"
+              placeholder="Enter your message..."></textarea>
           </div>
         </div>
-        <div class="lb-mt-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-          <label class="lb-text-sm lb-mb-sm" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Textarea</label>
-          <textarea class="lb-input lb-textarea" placeholder="Enter your message..."></textarea>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Badges Section -->
-    <section class="lb-card lb-mb-lg">
-      <div class="lb-card-header">
-        <h2 class="lb-card-title">Badges</h2>
-      </div>
-      <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md">
-          <span class="lb-badge">Default</span>
-          <span class="lb-badge lb-badge-primary">Primary</span>
-          <span class="lb-badge lb-badge-success">Success</span>
-          <span class="lb-badge lb-badge-warning">Warning</span>
-          <span class="lb-badge lb-badge-danger">Danger</span>
+      <!-- Badges Section -->
+      <section class="lb-card lb-mb-lg">
+        <div class="lb-card-header">
+          <h2 class="lb-card-title">Badges</h2>
         </div>
-      </div>
-    </section>
+        <div class="lb-card-body">
+          <div
+            class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md"
+          >
+            <span class="lb-badge">Default</span>
+            <span class="lb-badge lb-badge-primary">Primary</span>
+            <span class="lb-badge lb-badge-success">Success</span>
+            <span class="lb-badge lb-badge-warning">Warning</span>
+            <span class="lb-badge lb-badge-danger">Danger</span>
+          </div>
+        </div>
+      </section>
 
-    <!-- Alerts Section -->
-    <section class="lb-card lb-mb-lg">
-      <div class="lb-card-header">
-        <h2 class="lb-card-title">Alerts</h2>
-      </div>
-      <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md lb-mb-lg">
-          <button class="lb-button lb-button-secondary" data-show-alert="info">Show Info</button>
-          <button class="lb-button lb-button-secondary" data-show-alert="success">Show Success</button>
-          <button class="lb-button lb-button-secondary" data-show-alert="warning">Show Warning</button>
-          <button class="lb-button lb-button-secondary" data-show-alert="danger">Show Danger</button>
+      <!-- Alerts Section -->
+      <section class="lb-card lb-mb-lg">
+        <div class="lb-card-header">
+          <h2 class="lb-card-title">Alerts</h2>
         </div>
-        <div id="toast-container" class="lb-toast-container"></div>
-        <div class="lb-mt-lg" style="background: var(--lb-gray-100); padding: 1rem; border-radius: var(--lb-border-radius-sm);">
-          <code class="lb-text-sm">&lt;div class="lb-alert lb-alert-info"&gt;...&lt;/div&gt;</code>
+        <div class="lb-card-body">
+          <div
+            class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md lb-mb-lg"
+          >
+            <button class="lb-button lb-button-secondary" data-show-alert="info"
+              >Show Info</button
+            >
+            <button
+              class="lb-button lb-button-secondary"
+              data-show-alert="success">Show Success</button
+            >
+            <button
+              class="lb-button lb-button-secondary"
+              data-show-alert="warning">Show Warning</button
+            >
+            <button
+              class="lb-button lb-button-secondary"
+              data-show-alert="danger">Show Danger</button
+            >
+          </div>
+          <div id="toast-container" class="lb-toast-container"></div>
+          <div
+            class="lb-mt-lg"
+            style="background: var(--lb-gray-100); padding: 1rem; border-radius: var(--lb-border-radius-sm);"
+          >
+            <code class="lb-text-sm"
+              >&lt;div class="lb-alert lb-alert-info"&gt;...&lt;/div&gt;</code
+            >
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Modal Section -->
-    <section class="lb-card lb-mb-lg">
-      <div class="lb-card-header">
-        <h2 class="lb-card-title">Modal / Popup</h2>
-      </div>
-      <div class="lb-card-body">
-        <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md">
-          <button class="lb-button lb-button-primary" id="open-modal-1">Open Modal</button>
-          <button class="lb-button lb-button-secondary" id="open-modal-2">Confirm Dialog</button>
+      <!-- Modal Section -->
+      <section class="lb-card lb-mb-lg">
+        <div class="lb-card-header">
+          <h2 class="lb-card-title">Modal / Popup</h2>
         </div>
-        <div class="lb-mt-lg" style="background: var(--lb-gray-100); padding: 1rem; border-radius: var(--lb-border-radius-sm);">
-          <code class="lb-text-sm">&lt;div class="lb-modal-overlay" id="modal"&gt;...&lt;/div&gt;</code>
+        <div class="lb-card-body">
+          <div
+            class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md"
+          >
+            <button class="lb-button lb-button-primary" id="open-modal-1"
+              >Open Modal</button
+            >
+            <button class="lb-button lb-button-secondary" id="open-modal-2"
+              >Confirm Dialog</button
+            >
+          </div>
+          <div
+            class="lb-mt-lg"
+            style="background: var(--lb-gray-100); padding: 1rem; border-radius: var(--lb-border-radius-sm);"
+          >
+            <code class="lb-text-sm"
+              >&lt;div class="lb-modal-overlay" id="modal"&gt;...&lt;/div&gt;</code
+            >
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Usage Section -->
-    <section class="lb-card">
-      <div class="lb-card-header">
-        <h2 class="lb-card-title">How to Use</h2>
-      </div>
-      <div class="lb-card-body">
-        <p class="lb-text lb-mb-md">Copy the <code>global.css</code> file into your project and use the classes:</p>
-        <div style="background: var(--lb-gray-800); color: var(--lb-gray-100); padding: 1.5rem; border-radius: var(--lb-border-radius); font-family: monospace; font-size: 0.875rem; overflow-x: auto;">
-          <pre>&lt;link rel="stylesheet" href="global.css"&gt;
+      <!-- Usage Section -->
+      <section class="lb-card">
+        <div class="lb-card-header">
+          <h2 class="lb-card-title">How to Use</h2>
+        </div>
+        <div class="lb-card-body">
+          <p class="lb-text lb-mb-md">
+            Copy the <code>global.css</code> file into your project and use the classes:
+          </p>
+          <div
+            style="background: var(--lb-gray-800); color: var(--lb-gray-100); padding: 1.5rem; border-radius: var(--lb-border-radius); font-family: monospace; font-size: 0.875rem; overflow-x: auto;"
+          >
+            <pre>&lt;link rel="stylesheet" href="global.css"&gt;
 
 &lt;button class="lb-button lb-button-primary"&gt;Click me&lt;/button&gt;
 
@@ -188,92 +284,129 @@ import '../styles/global.css';
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer
+        style="text-align: center; margin-top: 3rem; padding: 2rem 0; color: var(--lb-gray-500); font-size: 0.875rem;"
+      >
+        <p>Light Breeze UI - Frutiger Aero CSS Template</p>
+      </footer>
+    </div>
+
+    <!-- Modal 1: Info Modal -->
+    <div class="lb-modal-overlay" id="modal-1">
+      <div class="lb-modal">
+        <div class="lb-modal-header">
+          <span class="lb-modal-title">Welcome Back</span>
+          <button class="lb-modal-close" data-close="modal-1">&times;</button>
+        </div>
+        <div class="lb-modal-body">
+          <p class="lb-text">
+            This is a glass-effect modal with backdrop blur. It follows the
+            Frutiger Aero design language with translucent surfaces and soft
+            gradients.
+          </p>
+        </div>
+        <div class="lb-modal-footer">
+          <button class="lb-button lb-button-secondary" data-close="modal-1"
+            >Cancel</button
+          >
+          <button class="lb-button lb-button-primary" data-close="modal-1"
+            >Got it</button
+          >
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer style="text-align: center; margin-top: 3rem; padding: 2rem 0; color: var(--lb-gray-500); font-size: 0.875rem;">
-      <p>Light Breeze UI - Frutiger Aero CSS Template</p>
-    </footer>
-  </div>
-
-  <!-- Modal 1: Info Modal -->
-  <div class="lb-modal-overlay" id="modal-1">
-    <div class="lb-modal">
-      <div class="lb-modal-header">
-        <span class="lb-modal-title">Welcome Back</span>
-        <button class="lb-modal-close" data-close="modal-1">&times;</button>
-      </div>
-      <div class="lb-modal-body">
-        <p class="lb-text">This is a glass-effect modal with backdrop blur. It follows the Frutiger Aero design language with translucent surfaces and soft gradients.</p>
-      </div>
-      <div class="lb-modal-footer">
-        <button class="lb-button lb-button-secondary" data-close="modal-1">Cancel</button>
-        <button class="lb-button lb-button-primary" data-close="modal-1">Got it</button>
+    <!-- Modal 2: Confirm Dialog -->
+    <div class="lb-modal-overlay" id="modal-2">
+      <div class="lb-modal" style="max-width: 380px;">
+        <div class="lb-modal-header">
+          <span class="lb-modal-title">Confirm Action</span>
+          <button class="lb-modal-close" data-close="modal-2">&times;</button>
+        </div>
+        <div class="lb-modal-body">
+          <p class="lb-text">
+            Are you sure you want to proceed? This action cannot be undone.
+          </p>
+        </div>
+        <div class="lb-modal-footer">
+          <button class="lb-button lb-button-secondary" data-close="modal-2"
+            >No, cancel</button
+          >
+          <button
+            class="lb-button lb-button-primary"
+            style="background: linear-gradient(180deg, #ff7043 0%, #e53935 100%);"
+            data-close="modal-2">Yes, delete</button
+          >
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal 2: Confirm Dialog -->
-  <div class="lb-modal-overlay" id="modal-2">
-    <div class="lb-modal" style="max-width: 380px;">
-      <div class="lb-modal-header">
-        <span class="lb-modal-title">Confirm Action</span>
-        <button class="lb-modal-close" data-close="modal-2">&times;</button>
-      </div>
-      <div class="lb-modal-body">
-        <p class="lb-text">Are you sure you want to proceed? This action cannot be undone.</p>
-      </div>
-      <div class="lb-modal-footer">
-        <button class="lb-button lb-button-secondary" data-close="modal-2">No, cancel</button>
-        <button class="lb-button lb-button-primary" style="background: linear-gradient(180deg, #ff7043 0%, #e53935 100%);" data-close="modal-2">Yes, delete</button>
-      </div>
-    </div>
-  </div>
+    <script>
+      const toggle = document.getElementById("theme-toggle");
+      const icon = document.getElementById("theme-icon");
+      const text = document.getElementById("theme-text");
 
-  <script>
-    const toggle = document.getElementById('theme-toggle');
-    const icon = document.getElementById('theme-icon');
-    const text = document.getElementById('theme-text');
-    
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateButton(savedTheme);
-    
-    toggle?.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateButton(next);
-    });
-    
-    function updateButton(theme: string) {
-      if (theme === 'dark') {
-        icon?.textContent ? (icon.textContent = '🌙') : null;
-        text?.textContent ? (text.textContent = 'Dark') : null;
-      } else {
-        icon?.textContent ? (icon.textContent = '☀️') : null;
-        text?.textContent ? (text.textContent = 'Light') : null;
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      updateButton(savedTheme);
+
+      toggle?.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        updateButton(next);
+      });
+
+      function updateButton(theme: string) {
+        if (theme === "dark") {
+          icon?.textContent ? (icon.textContent = "🌙") : null;
+          text?.textContent ? (text.textContent = "Dark") : null;
+        } else {
+          icon?.textContent ? (icon.textContent = "☀️") : null;
+          text?.textContent ? (text.textContent = "Light") : null;
+        }
       }
-    }
 
-    // Toast alerts
-    const alerts: Record<string, { icon: string; title: string; message: string }> = {
-      info: { icon: 'ℹ️', title: 'Info', message: 'This is an informational alert message.' },
-      success: { icon: '✅', title: 'Success', message: 'Your action was completed successfully!' },
-      warning: { icon: '⚠️', title: 'Warning', message: 'Please be aware of this important notice.' },
-      danger: { icon: '❌', title: 'Error', message: 'Something went wrong. Please try again.' }
-    };
+      // Toast alerts
+      const alerts: Record<
+        string,
+        { icon: string; title: string; message: string }
+      > = {
+        info: {
+          icon: "ℹ️",
+          title: "Info",
+          message: "This is an informational alert message.",
+        },
+        success: {
+          icon: "✅",
+          title: "Success",
+          message: "Your action was completed successfully!",
+        },
+        warning: {
+          icon: "⚠️",
+          title: "Warning",
+          message: "Please be aware of this important notice.",
+        },
+        danger: {
+          icon: "❌",
+          title: "Error",
+          message: "Something went wrong. Please try again.",
+        },
+      };
 
-    function showToast(type: string) {
-      const data = alerts[type];
-      const container = document.getElementById('toast-container');
-      if (!container) return;
-      const toast = document.createElement('div');
-      toast.className = `lb-toast lb-toast-${type}`;
-      toast.innerHTML = `
+      function showToast(type: string) {
+        const data = alerts[type];
+        const container = document.getElementById("toast-container");
+        if (!container) return;
+        const toast = document.createElement("div");
+        toast.className = `lb-toast lb-toast-${type}`;
+        toast.innerHTML = `
         <span class="lb-toast-icon">${data.icon}</span>
         <div class="lb-toast-content">
           <div class="lb-toast-title">${data.title}</div>
@@ -281,72 +414,74 @@ import '../styles/global.css';
         </div>
         <button class="lb-toast-close">&times;</button>
       `;
-      container.appendChild(toast);
+        container.appendChild(toast);
 
-      requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          toast.classList.add('show');
+          requestAnimationFrame(() => {
+            toast.classList.add("show");
+          });
+        });
+
+        const closeBtn = toast.querySelector(".lb-toast-close");
+        if (closeBtn) {
+          closeBtn.addEventListener("click", () => {
+            toast.classList.remove("show");
+            toast.classList.add("hide");
+            setTimeout(() => toast.remove(), 400);
+          });
+        }
+
+        setTimeout(() => {
+          if (toast.parentNode) {
+            toast.classList.remove("show");
+            toast.classList.add("hide");
+            setTimeout(() => toast.remove(), 400);
+          }
+        }, 4000);
+      }
+
+      document.querySelectorAll("[data-show-alert]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          showToast(btn.getAttribute("data-show-alert"));
         });
       });
 
-      const closeBtn = toast.querySelector('.lb-toast-close');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          toast.classList.remove('show');
-          toast.classList.add('hide');
-          setTimeout(() => toast.remove(), 400);
-        });
-      }
+      // Modal logic
+      document.getElementById("open-modal-1").addEventListener("click", () => {
+        document.getElementById("modal-1").classList.add("active");
+      });
 
-      setTimeout(() => {
-        if (toast.parentNode) {
-          toast.classList.remove('show');
-          toast.classList.add('hide');
-          setTimeout(() => toast.remove(), 400);
+      document.getElementById("open-modal-2").addEventListener("click", () => {
+        document.getElementById("modal-2").classList.add("active");
+      });
+
+      document.querySelectorAll("[data-close]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-close");
+          document.getElementById(id).classList.remove("active");
+        });
+      });
+
+      document.querySelectorAll(".lb-modal-overlay").forEach((overlay) => {
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) {
+            overlay.classList.remove("active");
+          }
+        });
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          document
+            .querySelectorAll(".lb-modal-overlay.active")
+            .forEach((m) => m.classList.remove("active"));
         }
-      }, 4000);
+      });
+    </script>
+  </body>
+  <style>
+    section {
+      min-height: 300px;
     }
-
-    document.querySelectorAll('[data-show-alert]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        showToast(btn.getAttribute('data-show-alert'));
-      });
-    });
-
-    // Modal logic
-    document.getElementById('open-modal-1').addEventListener('click', () => {
-      document.getElementById('modal-1').classList.add('active');
-    });
-
-    document.getElementById('open-modal-2').addEventListener('click', () => {
-      document.getElementById('modal-2').classList.add('active');
-    });
-
-    document.querySelectorAll('[data-close]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-close');
-        document.getElementById(id).classList.remove('active');
-      });
-    });
-
-    document.querySelectorAll('.lb-modal-overlay').forEach(overlay => {
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-          overlay.classList.remove('active');
-        }
-      });
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.lb-modal-overlay.active').forEach(m => m.classList.remove('active'));
-      }
-    });
-  </script>
-</body>
-<style>
-  section{
-    min-height: 300px;
-  }
-</style>
+  </style>
 </html>
