@@ -1,0 +1,48 @@
+---
+import SectionHeader from '../SectionHeader.astro';
+---
+
+<section class="lb-card lb-section" id="forms">
+  <SectionHeader title="Form Inputs" />
+  <div class="lb-card-body">
+    <div class="lb-flex lb-flex-wrap lb-justify-center lb-gap-lg">
+      <div class="lb-form-group" style="flex: 1; min-width: 200px; max-width: 300px;">
+        <label class="lb-text-sm lb-mb-sm lb-form-label">Text Input</label>
+        <input type="text" class="lb-input" placeholder="Enter text...">
+      </div>
+      <div class="lb-form-group" style="flex: 1; min-width: 200px; max-width: 300px;">
+        <label class="lb-text-sm lb-mb-sm lb-form-label">Email Input</label>
+        <input type="email" class="lb-input" placeholder="email@example.com">
+      </div>
+      <div class="lb-form-group" style="flex: 1; min-width: 200px; max-width: 300px;">
+        <label class="lb-text-sm lb-mb-sm lb-form-label">Select</label>
+        <select class="lb-input lb-select">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="lb-mt-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+      <label class="lb-text-sm lb-mb-sm lb-form-label">Textarea</label>
+      <textarea class="lb-input lb-textarea" placeholder="Enter your message..."></textarea>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lb-section {
+    min-height: 300px;
+  }
+
+  .lb-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lb-form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+</style>

@@ -1,0 +1,93 @@
+---
+import SectionHeader from '../SectionHeader.astro';
+---
+
+<section class="lb-card lb-section" id="modals">
+  <SectionHeader title="Modal / Popup" />
+  <div class="lb-card-body">
+    <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md">
+      <button class="lb-button lb-button-primary" id="open-modal-1">Open Modal</button>
+      <button class="lb-button lb-button-secondary" id="open-modal-2">Confirm Dialog</button>
+    </div>
+    <div class="lb-mt-lg lb-code-block">
+      <code class="lb-text-sm">&lt;div class="lb-modal-overlay" id="modal"&gt;...&lt;/div&gt;</code>
+    </div>
+  </div>
+</section>
+
+<!-- Modal 1: Info Modal -->
+<div class="lb-modal-overlay" id="modal-1">
+  <div class="lb-modal">
+    <div class="lb-modal-header">
+      <span class="lb-modal-title">Welcome Back</span>
+      <button class="lb-modal-close" data-close="modal-1">&times;</button>
+    </div>
+    <div class="lb-modal-body">
+      <p class="lb-text">This is a glass-effect modal with backdrop blur. It follows the Frutiger Aero design language with translucent surfaces and soft gradients.</p>
+    </div>
+    <div class="lb-modal-footer">
+      <button class="lb-button lb-button-secondary" data-close="modal-1">Cancel</button>
+      <button class="lb-button lb-button-primary" data-close="modal-1">Got it</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2: Confirm Dialog -->
+<div class="lb-modal-overlay" id="modal-2">
+  <div class="lb-modal" style="max-width: 380px;">
+    <div class="lb-modal-header">
+      <span class="lb-modal-title">Confirm Action</span>
+      <button class="lb-modal-close" data-close="modal-2">&times;</button>
+    </div>
+    <div class="lb-modal-body">
+      <p class="lb-text">Are you sure you want to proceed? This action cannot be undone.</p>
+    </div>
+    <div class="lb-modal-footer">
+      <button class="lb-button lb-button-secondary" data-close="modal-2">No, cancel</button>
+      <button class="lb-button lb-button-primary" style="background: linear-gradient(180deg, #ff7043 0%, #e53935 100%);" data-close="modal-2">Yes, delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('open-modal-1')?.addEventListener('click', () => {
+    document.getElementById('modal-1')?.classList.add('active');
+  });
+
+  document.getElementById('open-modal-2')?.addEventListener('click', () => {
+    document.getElementById('modal-2')?.classList.add('active');
+  });
+
+  document.querySelectorAll('[data-close]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-close');
+      document.getElementById(id || '')?.classList.remove('active');
+    });
+  });
+
+  document.querySelectorAll('.lb-modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.lb-modal-overlay.active').forEach(m => m.classList.remove('active'));
+    }
+  });
+</script>
+
+<style>
+  .lb-section {
+    min-height: 300px;
+  }
+
+  .lb-code-block {
+    background: var(--lb-gray-100);
+    padding: 1rem;
+    border-radius: var(--lb-border-radius-sm);
+  }
+</style>

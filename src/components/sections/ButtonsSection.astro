@@ -1,0 +1,34 @@
+---
+import SectionHeader from '../SectionHeader.astro';
+---
+
+<section class="lb-card lb-section" id="buttons">
+  <SectionHeader title="Buttons" />
+  <div class="lb-card-body">
+    <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md">
+      <button class="lb-button lb-button-primary">Primary</button>
+      <button class="lb-button lb-button-secondary">Secondary</button>
+      <button class="lb-button lb-button-ghost">Ghost</button>
+    </div>
+    <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md lb-mt-lg">
+      <button class="lb-button lb-button-primary lb-button-sm">Small</button>
+      <button class="lb-button lb-button-primary">Default</button>
+      <button class="lb-button lb-button-primary lb-button-lg">Large</button>
+    </div>
+    <div class="lb-mt-lg lb-code-block">
+      <code class="lb-text-sm">&lt;button class="lb-button lb-button-primary"&gt;Primary&lt;/button&gt;</code>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lb-section {
+    min-height: 300px;
+  }
+
+  .lb-code-block {
+    background: var(--lb-gray-100);
+    padding: 1rem;
+    border-radius: var(--lb-border-radius-sm);
+  }
+</style>

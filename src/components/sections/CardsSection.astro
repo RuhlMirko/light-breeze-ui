@@ -1,0 +1,33 @@
+---
+import SectionHeader from '../SectionHeader.astro';
+---
+
+<section class="lb-card lb-section" id="cards">
+  <SectionHeader title="Cards" />
+  <div class="lb-card-body">
+    <div class="lb-flex lb-flex-wrap lb-justify-center lb-gap-lg">
+      <div class="lb-card" style="flex: 1; min-width: 250px; max-width: 350px;">
+        <div class="lb-card-header">
+          <h3 class="lb-card-title lb-heading-sm">Card Title</h3>
+        </div>
+        <div class="lb-card-body">
+          <p class="lb-text">This is a glass-effect card with backdrop blur and gradient overlays.</p>
+        </div>
+      </div>
+      <div class="lb-card" style="flex: 1; min-width: 250px; max-width: 350px;">
+        <div class="lb-card-header">
+          <h3 class="lb-card-title lb-heading-sm">Another Card</h3>
+        </div>
+        <div class="lb-card-body">
+          <p class="lb-text">Cards have a frosted glass appearance typical of the Aero design language.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lb-section {
+    min-height: 300px;
+  }
+</style>

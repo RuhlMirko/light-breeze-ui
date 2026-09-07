@@ -1,0 +1,121 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="lb-footer">
+  <div class="lb-footer-inner">
+    <div class="lb-footer-brand">
+      <span class="lb-footer-logo">Light Breeze UI</span>
+      <p class="lb-footer-tagline">Frutiger Aero CSS Template</p>
+    </div>
+    
+    <div class="lb-footer-links">
+      <div class="lb-footer-section">
+        <h4 class="lb-footer-heading">Resources</h4>
+        <ul class="lb-footer-list">
+          <li><a href="#buttons">Components</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#modals">Modals</a></li>
+        </ul>
+      </div>
+      
+      <div class="lb-footer-section">
+        <h4 class="lb-footer-heading">More</h4>
+        <ul class="lb-footer-list">
+          <li><a href="#badges">Badges</a></li>
+          <li><a href="#alerts">Alerts</a></li>
+          <li><a href="#cards">Cards</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="lb-footer-bottom">
+    <p>&copy; {currentYear} Light Breeze UI. Free to use.</p>
+  </div>
+</footer>
+
+<style>
+  .lb-footer {
+    margin-top: 4rem;
+    padding: 2rem 1.5rem 1rem;
+    background: var(--lb-bg-card);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--lb-border-light);
+  }
+
+  .lb-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .lb-footer-logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--lb-text-primary);
+  }
+
+  .lb-footer-tagline {
+    color: var(--lb-text-secondary);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  .lb-footer-links {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .lb-footer-heading {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--lb-text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .lb-footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lb-footer-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .lb-footer-list a {
+    color: var(--lb-text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+  }
+
+  .lb-footer-list a:hover {
+    color: var(--lb-primary-500);
+  }
+
+  .lb-footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--lb-text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .lb-footer-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .lb-footer-links {
+      justify-content: center;
+    }
+  }
+</style>

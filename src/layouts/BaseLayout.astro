@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = 'Light Breeze UI',
+  description = 'A minimal CSS template inspired by early 2000s Frutiger Aero aesthetics. Copy the CSS file into any project for glossy, translucent, glass-effect components.'
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="theme-color" content="#0073e6">
+  <title>{title}</title>
+</head>
+<body>
+  <Header />
+  <main class="lb-container">
+    <slot />
+  </main>
+  <Footer />
+  
+  <script>
+    // Theme initialization
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</body>
+</html>

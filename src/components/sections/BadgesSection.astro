@@ -1,0 +1,22 @@
+---
+import SectionHeader from '../SectionHeader.astro';
+---
+
+<section class="lb-card lb-section" id="badges">
+  <SectionHeader title="Badges" />
+  <div class="lb-card-body">
+    <div class="lb-flex lb-flex-wrap lb-items-center lb-justify-center lb-gap-md">
+      <span class="lb-badge">Default</span>
+      <span class="lb-badge lb-badge-primary">Primary</span>
+      <span class="lb-badge lb-badge-success">Success</span>
+      <span class="lb-badge lb-badge-warning">Warning</span>
+      <span class="lb-badge lb-badge-danger">Danger</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lb-section {
+    min-height: 300px;
+  }
+</style>

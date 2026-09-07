@@ -1,0 +1,53 @@
+---
+import SectionHeader from '../SectionHeader.astro';
+---
+
+<section class="lb-card lb-section" id="usage">
+  <SectionHeader title="How to Use" />
+  <div class="lb-card-body">
+    <p class="lb-text lb-mb-md">Copy the <code>global.css</code> file into your project and use the classes:</p>
+    <div class="lb-usage-code">
+      <pre>&lt;link rel="stylesheet" href="global.css"&gt;
+
+&lt;button class="lb-button lb-button-primary"&gt;Click me&lt;/button&gt;
+
+&lt;div class="lb-card"&gt;
+  &lt;div class="lb-card-header"&gt;
+    &lt;h3 class="lb-card-title"&gt;Title&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="lb-card-body"&gt;
+    Content here
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="lb-modal-overlay" id="modal"&gt;
+  &lt;div class="lb-modal"&gt;
+    &lt;div class="lb-modal-header"&gt;
+      &lt;span class="lb-modal-title"&gt;Title&lt;/span&gt;
+      &lt;button class="lb-modal-close"&gt;&times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="lb-modal-body"&gt;Content&lt;/div&gt;
+    &lt;div class="lb-modal-footer"&gt;
+      &lt;button class="lb-button lb-button-primary"&gt;OK&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lb-section {
+    min-height: 300px;
+  }
+
+  .lb-usage-code {
+    background: var(--lb-gray-800);
+    color: var(--lb-gray-100);
+    padding: 1.5rem;
+    border-radius: var(--lb-border-radius);
+    font-family: monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
+  }
+</style>

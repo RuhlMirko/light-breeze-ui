@@ -1,0 +1,53 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+}
+
+const { 
+  title = 'Light Breeze UI',
+  subtitle = 'A minimal CSS template inspired by early 2000s Frutiger Aero aesthetics',
+  description = 'Copy the CSS file into your project and use the classes'
+} = Astro.props;
+---
+
+<section class="lb-hero">
+  <h1 class="lb-heading lb-heading-xl">{title}</h1>
+  <p class="lb-hero-subtitle">{subtitle}</p>
+  <p class="lb-hero-description">{description}</p>
+</section>
+
+<style>
+  .lb-hero {
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .lb-heading-xl {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: var(--lb-gradient-aero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .lb-hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--lb-text-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .lb-hero-description {
+    font-size: 0.875rem;
+    color: var(--lb-gray-500);
+  }
+
+  @media (max-width: 768px) {
+    .lb-heading-xl {
+      font-size: 2rem;
+    }
+  }
+</style>
