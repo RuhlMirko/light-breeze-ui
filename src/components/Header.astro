@@ -38,31 +38,29 @@ const navItems = [
 </header>
 
 <script>
+  const themes = ['light', 'dark', 'muted'];
+  const themeIcons: Record<string, string> = { light: '☀️', dark: '🌙', muted: '🫧' };
+  const themeLabels: Record<string, string> = { light: 'Aero', dark: 'WMP', muted: 'Muted' };
+
   const toggle = document.getElementById('theme-toggle');
   const icon = document.getElementById('theme-icon');
   const text = document.getElementById('theme-text');
   const menuToggle = document.getElementById('menu-toggle');
   const mainNav = document.getElementById('main-nav');
-  
-  // Theme toggle
+
   function updateButton(theme: string) {
-    if (theme === 'dark') {
-      if (icon) icon.textContent = '🌙';
-      if (text) text.textContent = 'Dark';
-    } else {
-      if (icon) icon.textContent = '☀️';
-      if (text) text.textContent = 'Light';
-    }
+    if (icon) icon.textContent = themeIcons[theme] || '☀️';
+    if (text) text.textContent = themeLabels[theme] || 'Light';
   }
-  
-  // Initialize theme
+
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateButton(savedTheme);
-  
+
   toggle?.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const idx = themes.indexOf(current);
+    const next = themes[(idx + 1) % themes.length];
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
     updateButton(next);
